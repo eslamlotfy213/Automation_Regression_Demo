@@ -1,0 +1,305 @@
+downaload application-server -> request and respons
+host -> it's a machince has web / database / cpu 
+port number -> 8080
+
+-----------------------------------------------------------------------------
+steps
+1.download apache-tomcat
+2.then build the project to get build files 
+   if maven maven clean install
+3.after build 
+4. go to target folder and find .war file
+5. add ,war into > webapps at apache-tomcat
+6. run startup.bat
+7.access by localhost:8080
+add plugin at pom.xml
+   <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.2</version>
+      </plugin>
+8. go to target and find the war file webapp.war
+9. http://localhost:8080/webapp
+
+--------------------------------------------------------------------------------------------------------
+continous integration ?
+process automation build / test code after evey change commit to version controll 
+changes on code >
+third party will create a war file > 
+deploy a file into server >
+
+
+CD continuous Delivery 
+process to build / test configure / deploy from a build to production enviroment
+
+
+------------------------------------------------------------------------------------------------------------
+create project
+push code to githup
+<<<<< azure portal  will make >>>>>>> build / create war.file 
+war files or jar files called artifacts 
+
+
+code > githup >( test it / build it )> QA enviroment > Regression automation > production enviroment > access URL 
+
+---------------build pipline ----------------------------------------
+
+1.build pipline same as mvn clean install
+2.https://dev.azure.com/eslamlotfy2130761/AzureDemo2024
+  email:eslamlotfy213@yahoo.com
+  password:User12345##
+ 
+3.click on ... Create your first Pipeline
+4.Go to https://github.com/rahulshettyacademy/DevopsBasics your own repositiorty
+5.and login 
+6. select the repositiorty 
+7.configure the project ----------------> maven - android - ....
+8. the yaml file instraction is responsible for building the project  
+9.save and run 
+10. yaml file will be added at github
+https://stackoverflow.com/questions/68405027/how-to-resolve-no-hosted-parallelism-has-been-purchased-or-granted-in-free-tie
+access token : 73372mvvbf6zuwvk5jnyrscyg2mlhldsfebt2wsj5xph33vu626q
+change visiblity to private : https://dev.azure.com/eslamlotfy2130761/AzureDemo2024/_settings/
+pipline run : https://dev.azure.com/eslamlotfy2130761/AzureDemo2024/_apps/hub/ms.vss-build-web.ci-designer-hub?pipelineId=1&branch=master&nonce=JguuFQ8uSwfML%2Bs8FtcD5A%3D%3D
+
+----------------copy file from unbunto to myAzure ---------------------------------------------------------
+run pipline "yaml file" we b3mel build ll project 
+first I don't have war file leeh 3ashah dh 3ala unbunto (s) source  
+[/home/vsts/work/1/s/webapp/src/main/webapp] dh location el unbunto not my local pc
+keda 0 artifacts  3ashah war.file mawgood 3ala (s) unbunto
+
+1.go pipline and edit
+2. Copy file from (s) source ubunti location to --------------> my local pc (a) artifacts  [artifact stadging directly] 
+   Source Folder: .....
+   Contents: **/*.war
+   Target Folder : $(build.artifactstagingdirectory)
+   
+3. Publish build artifacts it to azure devops
+   Path to publish : $(Build.ArtifactStagingDirectory)
+   Artifact name : ektb anyname : warfile
+   Artifact publish location : Azure Piplines     dh 3ahan 0 artifacts to 1 artifacts
+ 
+
+keda 1 published  3ashah war.file mawgood 3ala (a) AzureDevops -----> webapp.war
+link: https://dev.azure.com/eslamlotfy2130761/AzureDemo2024/_build/results?buildId=7&view=artifacts&pathAsName=false&type=publishedArtifacts
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+yaml file                                         >  instruction to build the project in Build pipelines
+WAR file                                          >  is placed after building it by the maven tool
+valid file to create Azure pipeline’s             >  azure-pipelines.yml  dh added into github
+variables used to copy file to artifact directory >  $(build.artifactstagingdirectory)  dh kan fe (s) unbunto then copy to (a) 
+What is use of build pipeline in azure devops? to publish artifcats to the project
+
+
+
+
+-----------------links----------------------------------------------
+website : https://dev.azure.com/EslamLotfy/
+githup : https://github.com/eslamlotfy213/DevopsBasics
+portal :https://portal.azure.com/#home
+https://portal.azure.com/#home
+https://saijogeorge.com/dummy-credit-card-generator/
+https://www.vccgenerator.org/result/
+
+
+
+---------------------------------------------------------------
+"Insufficient privileges to complete the operation" while using Graph API
+https://learn.microsoft.com/en-us/answers/questions/197819/insufficient-privileges-to-complete-the-operation
+---------------------------------------------------------------
+
+---------------release pipline----------------------------------------
+build pipeline  -> it clone repo and then create a create (yaml file) that has instruction and then return (war file)
+release pipline -> same as tomcat server so will add your .war file its a artifact 
+
+
+dh release pipline > will add your war file to server 
+go to orgazniztion > setting > disable creation release pipline
+Create release pipline 
+select Azure App service deployment
+add subscription 
+ add autorization
+ adding Display name 
+ connection type 
+ package or folder > $(system.DefaultWorkingDirectory)/**/*/.war  dh el path bta3 .war file elly enta 3amlet leh pulish
+go azure portal to create [resource ....]
+Create resouese and URL and name 
+URL : https://eslamlotfydemo.azurewebsites.net/
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+Add artiface   + Stadges QA enviroment
+*Add project
+-Save
+-Create release
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+now we have two pipline 
+*build pipeline   > Add artiface 
+*release pipline  > Stadges 
+
+
+
+build pipeline
+these pipline job clone the code from assigned repositorties and build the project based on instructions provided in yaml file
+
+Release pipline
+Theses pipelines ara generally used deploy and build artifacts into agent machines
+
+Create Release
+this component helps us to build end to end pipline connecting build and release pipline for ci / cd implemetation 
+------------------------------------------------------------------------
+project idea:
+automatically buid pipline will be triggered and it will build you project
+create a file war file
+
+-------------------------------------------------------------------------
+CI
+when you makes to code
+build pipline will automatically trigger will create new war file
+
+CD
+release pipeline will be trigger and deploys into Azure Cloud
+
+<h1> RahulShettyAcademy.com Learning</h1>
+<h2> Learn QA Automation tools + Devops Tools CI/CD pipelines in course from Scratch</h2>
+<h2> Good Luck and we are almost done with the course.Thankyou</h2>
+
+-----------------------import Automation project to azure devops ----------------------------------
+import Automation project to azure devops 
+1.artifacts build pipeline
+2.QA stadge enviroment that hosting the webapplication   release pipeline
+3.anthoer repo has the Automation code
+ run with mvn test 
+
+4.first will create new artifact after importing Automation project of githup
+go to AutomationTests job and add your code 
+5aly balk
+       Pom.xml add the path  
+       package : goal
+	   
+5.then need to create another job > clould hosting release pipeline for prodution enviroment
+prodution enviroment
+    create a new resource on azure portal > create a web app
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+artifact build piplince -> QA enviroment (release pipeline) -> Production enviroment (release pipeline)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Create release 
+
+artifacts 
+QA Enviroment
+Regression Automatic 
+Production
+
+
+------------------------------Docker hub integration with Azure devops--------------------------------------------------------------
+maven project 
+enta 3andek war file 
+manual chooese > tomcat server 
+automatic choose > Azure devops wep app
+
+
+Docker Image > Docker File
+war file > deploy tomcat
+Find any machine and the start Docker container (image)
+ 1.enta will write code Docker File
+ 2.will create a Docker Image 
+ 3.Looks for war file 
+ 4.Deploy on tomcat server 
+ 
+Docker hub(The place where it store all the images )
+AzureDockerfile
+	FROM tomcat:latest
+	COPY ./webapp/target/webapp.war /usr/local/tomcat/webapps
+	RUN cp -r /usr/local/tomcat/webapps.dist/* /usr/local/tomcat/webapps
+
+
+link docker hub  : https://hub.docker.com/
+
+github
+email : eslamlotfy213@yahoo.com
+password : Axax123##
+
+Docker 
+email : islamlotfy8@gmail.com
+password : Azaz1212##
+
+-------------------Personal Access Token  create your own Server on local---------------------------------------------------------------------------------------------------
+1.create personal Access token for instaible server Agent
+2.Run on power shell as adminstrart
+3. cd agent 
+ mkdir agent ; cd agent
+ Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("$HOME\Downloads\vsts-agent-win-x64-3.232.1.zip", "$PWD")
+4.ektb .\config.cmd
+5. Server URL : https://dev.azure.com/EslamLotfy
+6.to get personal access token  https://dev.azure.com/EslamLotfy/_usersSettings/tokens
+	create PAT
+	show more
+	agent pool
+	read and manage
+rsa > 3kodeehzz6vbe5nd6hdqr5bfxhenyyt5cn6yibr5zv45muytklwa
+7.ektb .\run.cmd
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+1.awel 7aga enta 3amel release pipline 3ala azuer portal 
+1.mmoekn t3eml release pipline 3ala local machince tomcat my pc 
+StepS:
+1.Create release 
+2.empty jobs 
+3.Agent job
+4.select agent pool > default
+5.go to my pc and when            C:\agent\_work\r1\a\_eslamlotfy213.DevopsBasics\warfile\webapp\target\war.file
+6.copy war.file  into tomcat server folder  e3mel job
+
+1.create another job copy war file to tomcat
+	cd "C:\agent\_work\r1\a\_eslamlotfy213.DevopsBasics\warfile\webapp\target"
+    copy webapp.war "D:\Devops\apache-tomcat-10.1.17-windows-x64\apache-tomcat-10.1.17\webapps"
+2.save button
+
+enter > http://localhost:8080/webapp/  website 
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
