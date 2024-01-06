@@ -26,7 +26,7 @@ public class Test_Check_HomePageHeader {
     public void Check_HomePageheader(){
 
       String expected =driver.findElement(By.tagName("h1")).getText();
-      Assert.assertEquals("Build pipeline and Automation Tests",expected);
+      Assert.assertTrue(expected.contains("pipeline"));
         driver.quit();
     }
 

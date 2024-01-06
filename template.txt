@@ -329,6 +329,9 @@ ektb latest 3ashna tegeeb latest version
 
 9.docker images  // to know all the images are downaload
 
+------------------------------------------------------------------
+
+
 
 
 
