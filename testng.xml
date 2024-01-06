@@ -3,9 +3,15 @@
 
 <suite parallel="none" name="Suite" thread-count="2">
 
-  <test name="SP1_Login_VerifyLogin Test">
+  <test name="Regression Tests1">
     <classes>
       <class name="tests.Test_Check_HomePageHeader"/>
+    </classes>
+  </test> <!-- Test -->
+
+
+  <test name="Regression Tests2">
+    <classes>
       <class name="tests.Test_Check_HomePageTitle"/>
     </classes>
   </test> <!-- Test -->

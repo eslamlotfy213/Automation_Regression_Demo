@@ -188,6 +188,17 @@ QA Enviroment
 Regression Automatic 
 Production
 
+steps
+1. insert code at github
+2. go to azure > repo > impot project from github
+3. create new artifact from imported githup 
+4. go to staged (release) and Add new task called "Automation Regression Testing"
+5. go to agend (+) add task to agent job  
+6. search for maven 
+ you have : Maven POM file 
+ click in three dots to reach to path : $(System.DefaultWorkingDirectory)/_demo Azure pipeline/pom.xml
+ Goal(s) : test   >  zy mat3mel mvn test 
+7.click save  
 
 ------------------------------Docker hub integration with Azure devops--------------------------------------------------------------
 maven project 
@@ -258,32 +269,65 @@ StepS:
 enter > http://localhost:8080/webapp/  website 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 
+---------------------------------------------------docker-----------------------------------------------
+- docker is a computer program that performs operating system level 
+- docker is tool designed to make it easier , create , deploy and run application 
+by container
+- Docker is a software containerization platform , you can build your apllication , package them along with their 
+dependencies into a container and the theses  containers can be easily shipped to run on other machines 
+
+what is a docker file ? 
+- is where you write the instructions to build a docker image 
+
+
+what is image ?          
+-  lightweight , standalone , executable package of software that 
+include everything needed to run the application : code , runtime , system tools , system libraray , settings
+
+what is container  ?   
+- is the runtime instance of an image  
+- create a fresh operating system
+
+------------------------------------containers Vs Virtual machines------------------------------------------------------------------------------------------
+virtualization 
+-----> is the technique of importing a guest operating system on top of host operating system
+dh submit all resources law 3adk 100 Ram 7etwz3o 333 Ram for virtual machine1 , 333 Ram for virtual machine2 , 333 Ram for virtual machines 3  
+---> enta dh host 
+---> elly gai zy virtual machince or container dh guest 
+---> it's create its own memmory inside guest operating system 
+
+container  
+-----> it's rely on hosting operating system memmory only 
+-----> it's access utlize ti from host operating system only 
+-----> is however more efficient because there is no guest OS here and utilizes a host' operating system 
+share relevant libraries & resources as and when needed unlike virtual machines
+-----> they lightweight and faster than virual machines
 
 
 
+Docker hub > same as maven dependencisces Like: pom.xml
+dh zy github > adding you images inside it
+-------------------------------------install docker ---------------------------
+1-install docker https://docs.docker.com/desktop/install/windows-install/
+2-Sign up 
+3- requirment To run Windows containers, you need Windows 10 or Windows 11 Professional or Enterprise edition.
+ Windows Home or Education editions only allow you to run Linux containers.
+4-downlaod 
+5-docker --version
+6- Get-WmiObject -Class Win32_OperatingSystem | % Caption
+6- Get-WmiObject -Class Win32_OperatingSystem | % Buildnumber
 
 
+7.docker ps   // to check if container is exist or not  
+
+Link github : https://github.com/SeleniumHQ/docker-selenium
+dh el image name >selenuim/standalone-chrome:
+
+8.docker pull selenium/standalone-chrome:latest
+ektb latest 3ashna tegeeb latest version
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+9.docker images  // to know all the images are downaload
 
 
 

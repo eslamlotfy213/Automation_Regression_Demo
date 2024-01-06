@@ -47,9 +47,11 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>3.0.0-M6</version>
                     <configuration>
+
                         <suiteXmlFiles>
                             <suiteXmlFile>testng.xml</suiteXmlFile>
                         </suiteXmlFiles>
+                            <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
                     </configuration>
                 </plugin>
             </plugins>
