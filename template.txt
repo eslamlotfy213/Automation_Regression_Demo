@@ -393,6 +393,10 @@ gitdemo (Y)   git push origin development
 gitX  git checkout development
 gitX  git pull origin development    //still on development branc
 
+----------------------now need to merge to master --------------------
+
+1. enta wa2f 3ala anhy branch  (active branch)                > git checkout master  
+2. eih el branch elly 3aiz te3me leeh merge (merged branch)  > git merge development
 
 
 
