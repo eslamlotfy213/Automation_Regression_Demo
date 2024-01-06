@@ -326,23 +326,67 @@ dh el image name >selenuim/standalone-chrome:
 8.docker pull selenium/standalone-chrome:latest
 ektb latest 3ashna tegeeb latest version
 
-
 9.docker images  // to know all the images are downaload
 
-------------------------------------------------------------------
+----------------------git hup-------------------------------------------
+tell git who you are ?
+git config --global user.name ""
+git config --global user.email ""
+
+you have a code  
+//lines 
+//lines 
+//lines 
 
 
+local repor
 
+git add .  :  Stage    ->  first level of commit   
 
+git commit -m "update"  ->  final level of commit 
 
+your code on pc  > local repositiorty
+your code on githup > removr repositiorty
 
+git remote add origin  (URL from githup)
 
+git push origin  master > project was originally cloned from
 
+---------------------------------------------------------------------------------------------------------------------------------
+Example :
+-----------------------------------------------------
+GItx      : create code fresh and push to to git hup
+-----------------------------------------------------
 
+gitdemo (Y) : git clone from repo  and make changes it's the first time 
+git add .  // staging 
+git status // check tracks 
+git commit -m "this commit updating form Y person" 
+git push  origin master  / /
+code is pushed to githup Website 
 
+-----------------------------------------------------
+GItx  git pull origin master // will get the latest code
+GItx : make change 
+GItx git add .
+GItx git commit -m "aaddding "
+GItx git push origin master  
+code is pushed to githup Website 
+-----------------------------------------------------
 
+gitdemo (Y) : git pull origin master // will get the latest code
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+----------------------------------------branch-------------------------------
+---> master branch rooot--->
+---> ---> ---> --->
+gitdemo (Y)  dh wa2f 3lal master branch 
+gitdemo (Y)  will create a new branch  > git checkout -b development
+-b > create  a new branch from your existing
+gitdemo (Y)   make changes   //still on development branch 
+
+gitdemo (Y)   git push origin development 
 
 
 
