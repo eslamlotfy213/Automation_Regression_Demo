@@ -380,14 +380,18 @@ gitdemo (Y) : git pull origin master // will get the latest code
 
 ----------------------------------------branch-------------------------------
 ---> master branch rooot--->
----> ---> ---> --->
+---> ---> ---> ---> --->
 gitdemo (Y)  dh wa2f 3lal master branch 
 gitdemo (Y)  will create a new branch  > git checkout -b development
 -b > create  a new branch from your existing
 gitdemo (Y)   make changes   //still on development branch 
+gitdemo (Y)   git add .
+gitdemo (Y)   git commit -m "uploading development"
+gitdemo (Y)   git push origin development
 
-gitdemo (Y)   git push origin development 
 
+gitX  git checkout development
+gitX  git pull origin development    //still on development branc
 
 
 
