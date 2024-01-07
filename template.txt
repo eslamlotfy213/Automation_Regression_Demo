@@ -397,6 +397,71 @@ gitX  git pull origin development    //still on development branc
 
 1. enta wa2f 3ala anhy branch  (active branch)                > git checkout master  
 2. eih el branch elly 3aiz te3me leeh merge (merged branch)  > git merge development
+git checkout master
+git merger developement 
+git add .
+git commit -m "merged to master"
+git push origin master
+
+
+-----------------solve conflict----------------------
+person x: make changes to master  branch and add 
+
+person y : create branch from master called develp2 and add changed  ... done
+
+person x : remove some line from file  // he is on master branch 
+
+person y  : git checkout develop2
+now person y will merge his code [develop2] to code [master]           
+git merge master  //elly active branch howa [develop2]
+solve the conflict 
+>>>>>>>>important !>>>>>>>>>>>>
+git add .
+git commit -m "sloved files"
+>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+-------------------conflict----------------------------------------------------
+
+a
+<<<<<<< HEAD
+b
+c
+------------------
+aa
+aa
+aa
+aa
+aa
+
+=======
+b
+>>>>>>> master
+
+
+-------------------sloved----------------------------------------------------
+
+
+a
+b
+c
+------------------
+aa
+aa
+aa
+aa
+aa
+
+
+
+
+
+
+
+
+
+
 
 
 
