@@ -177,20 +177,40 @@ release pipline -> same as tomcat server so will add your .war file its a artifa
 
 dh release pipline > will add your war file to server 
 go to orgazniztion > setting > disable creation release pipline
+
+14. Setup Release pipeline with Linux resources to deploy the artifact
+steps :
 Create release pipline 
 select Azure App service deployment
-add subscription 
- add autorization
- adding Display name 
- connection type 
+ 1.adding Display name 
+ 2.adding connection type 
+ 3.add subscription 
+ 4.add autorization enter email for azure 
+ 5.add type 
+ 6.add service name
  package or folder > $(system.DefaultWorkingDirectory)/**/*/.war  dh el path bta3 .war file elly enta 3amlet leh pulish
+
+
+
+13. Creating Resources for environments from Azure Portal
+steps : on azure portal 3ashan to create server
 go azure portal to create [resource ....]
 Create resouese and URL and name 
+create a free account 
+create web app
+Subscription : Azure subscription 1 
+Resource Group  : New demo 
+Java web server stack :
+Runtime stack : Tomact 9.0
+Opertation system : Linux
+Regin : Central US  
 URL : https://eslamlotfydemo.azurewebsites.net/
+
 
 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 Add artiface   + Stadges QA enviroment
-*Add project
+* Add project add esm el project
+* source(build pipeline)
 -Save
 -Create release
 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
@@ -199,7 +219,23 @@ now we have two pipline
 *release pipline  > Stadges 
 
 
+15. Importance of Create release component in the Azure Dev portal
+1.when you make changes to code 
+2.build pipeline will automatically trigger and create war file (CI)
 
+CD
+go to pipeline > release > kahrba continous deployment trigger >
+enable "enabling tigger will create a new release every tim a new build is avalialbe"
+Release pipeline will trigger and deployed into Azure Cloud 
+
+----------------------Example------------------
+go to DeveopsBasics on githup account
+devops.githup account 
+elly howa DeveopsBasics 
+go to index.jsp file 
+Edit this file <h2>
+save and commit 
+---------------------------------------------------
 build pipeline
 these pipline job clone the code from assigned repositorties and build the project based on instructions provided in yaml file
 
@@ -245,8 +281,45 @@ prodution enviroment
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 artifact build piplince -> QA enviroment (release pipeline) -> Production enviroment (release pipeline)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Create release 
+16. Importing GIT Repository of Automation Projects to Azure Repository
+17. Configuration to Add tests from Azure Repositories to Release pipelines
 
+1.go to release 
+2.edit 
+3.Add 
+4. enta 3ansk automaton project 3ala githup 
+5.go to azure portal 
+6.go tp Repo
+7.import a git repository 
+8.clone URL 
+9. b3d keda go pipeline
+10. Releases
+11. edit 
+12.Add button elly 3and "QA enviroment" job
+13. add new empty job for "automation regrssion code"
+14. enta 3andek Artifacts section 
+15. add an artifcat 
+keda 3amdle 7ageteen mn artifats 
+        one artifact dh source type build 
+                project AzureDemoRahul
+                source build pipeline deef el esma		
+        		created to generate war file dh marboot "QA enviroment" 
+        two artifact dh source type Azure Repos   
+                project AzureDemoRahul
+                source repositiorty deef el esma				
+        		created to generate war file dh marboot "Automation regression" 
+
+16. go Autoamaiotn regression job and configure 
+17.Agent job and (+) icon 
+18. choose maven  and ADD
+19.Maven Pom and e7tar el location of pom.xml 
+10.Goosls "Test"
+
+
+
+
+
+Create release 
 artifacts 
 QA Enviroment
 Regression Automatic 
@@ -263,6 +336,12 @@ steps
  click in three dots to reach to path : $(System.DefaultWorkingDirectory)/_demo Azure pipeline/pom.xml
  Goal(s) : test   >  zy mat3mel mvn test 
 7.click save  
+
+
+
+
+
+
 
 ------------------------------Docker hub integration with Azure devops--------------------------------------------------------------
 maven project 
@@ -296,6 +375,10 @@ Docker
 email : islamlotfy8@gmail.com
 password : Azaz1212##
 
+
+
+22. Creating Personal Access token for Installable Server Agent
+22. Creating Personal Access token for Installable Server Agent
 -------------------Personal Access Token  create your own Server on local---------------------------------------------------------------------------------------------------
 1.create personal Access token for instaible server Agent
 2.Run on power shell as adminstrart
@@ -314,10 +397,14 @@ rsa > 3kodeehzz6vbe5nd6hdqr5bfxhenyyt5cn6yibr5zv45muytklwa
 
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+22. Creating Personal Access token for Installable Server Agent
+	dy step for "QA enviroment"
+	dh zay ma makeon 3azi te3mel server 3ala zure devops 
+	dh hyt3mel 3ala local deploy 3ala local server "apache-tomcat|
 
 1.awel 7aga enta 3amel release pipline 3ala azuer portal 
 1.mmoekn t3eml release pipline 3ala local machince tomcat my pc 
-StepS:
+StepS: 
 1.Create release 
 2.empty jobs 
 3.Agent job
@@ -326,6 +413,7 @@ StepS:
 6.copy war.file  into tomcat server folder  e3mel job
 
 1.create another job copy war file to tomcat
+2.search for commad prompt
 	cd "C:\agent\_work\r1\a\_eslamlotfy213.DevopsBasics\warfile\webapp\target"
     copy webapp.war "D:\Devops\apache-tomcat-10.1.17-windows-x64\apache-tomcat-10.1.17\webapps"
 2.save button
