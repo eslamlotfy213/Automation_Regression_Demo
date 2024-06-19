@@ -51,11 +51,28 @@ code > githup >( test it / build it )> QA enviroment > Regression automation > p
 3.click on ... Create your first Pipeline
 4.Go to https://github.com/rahulshettyacademy/DevopsBasics your own repositiorty
 5.and login 
-6. select the repositiorty 
+6. select the repositiorty from githup 
+ dah lama tft7 githup and azure.dev el cookies the same
 7.configure the project ----------------> maven - android - ....
 8. the yaml file instraction is responsible for building the project  
 9.save and run 
-10. yaml file will be added at github
+10. yaml file will be added at github 
+ dh 3shan azure hy3mel scan 3ala yml file
+ b3d keda te3mel execute the ymal file
+9. Understanding Build Pipeline run configurations and logs
+el azure is doning that based upon yaml file what you create 
+		initilization job 
+		checkout 
+		Maven
+		post job : checkout 
+		finilize job
+
+byemel checkout from "github" to "s"
+s > standard for source
+a > standard for 
+bs lesa war file 3ala unbunto ana 3aiz war file 3ala apache-tomcat s7 ? 
+
+
 https://stackoverflow.com/questions/68405027/how-to-resolve-no-hosted-parallelism-has-been-purchased-or-granted-in-free-tie
 access token : 73372mvvbf6zuwvk5jnyrscyg2mlhldsfebt2wsj5xph33vu626q
 change visiblity to private : https://dev.azure.com/eslamlotfy2130761/AzureDemo2024/_settings/
@@ -78,7 +95,6 @@ keda 0 artifacts  3ashah war.file mawgood 3ala (s) unbunto
    Artifact name : ektb anyname : warfile
    Artifact publish location : Azure Piplines     dh 3ahan 0 artifacts to 1 artifacts
  
-
 keda 1 published  3ashah war.file mawgood 3ala (a) AzureDevops -----> webapp.war
 link: https://dev.azure.com/eslamlotfy2130761/AzureDemo2024/_build/results?buildId=7&view=artifacts&pathAsName=false&type=publishedArtifacts
 -------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -87,6 +103,54 @@ WAR file                                          >  is placed after building it
 valid file to create Azure pipeline’s             >  azure-pipelines.yml  dh added into github
 variables used to copy file to artifact directory >  $(build.artifactstagingdirectory)  dh kan fe (s) unbunto then copy to (a) 
 What is use of build pipeline in azure devops? to publish artifcats to the project
+
+11. Apply Continuous Integration to the Build pipeline for every commit
+
+b3d kdeda run pipeline
+jobs
+initilization job
+checkout ,,,,, el repo
+Maven
+copy files 
+PublishBuildArtifacts
+Post-job checkout  ,,,,, el repo
+
+keda zaher 1 publish keda exteacted the artifavt created in our unbunto agent machines to our a\ure pipline 
+ 
+ 
+# Maven
+# Build your Java project and run tests with Apache Maven.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+# Checkout New the build pipeline
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.8'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'package'
+- task: CopyFiles@2
+  inputs:
+    Contents: '**/*.war'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'warfile'
+    publishLocation: 'Container'
+	
+ 
 
 
 
