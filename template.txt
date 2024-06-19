@@ -380,6 +380,21 @@ password : Azaz1212##
 22. Creating Personal Access token for Installable Server Agent
 22. Creating Personal Access token for Installable Server Agent
 -------------------Personal Access Token  create your own Server on local---------------------------------------------------------------------------------------------------
+go to azureportal > project settings > pipelines > agent pools > add agent pool > New
+pool type : self_hosted 
+name : "own server Eslam"
+click on "own server Eslam" to connect to your local system
+New agent button 
+Download the agent the file will be downloaded
+
+Create the agent 
+PS C:\> mkdir agent ; cd agent
+PS C:\agent> Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("$HOME\Downloads\vsts-agent-win-x64-3.241.0.zip", "$PWD")
+
+download powershell > PowerShell-7.4.3-win-x64.msi
+Link download powsersheel : https://github.com/PowerShell/PowerShell/releases/tag/v7.4.3
+
+
 1.create personal Access token for instaible server Agent
 2.Run on power shell as adminstrart
 3. cd agent 
